@@ -1,0 +1,351 @@
+:root {
+  --clr-neutral-white: #ffffff;
+  --clr-neutral-gray-100: #f8f8f8;
+  --clr-neutral-gray-200: #ebebeb;
+  --clr-neutral-gray-700: #707070;
+  --clr-neutral-gray-900: #383838;
+
+  --clr-accent-blue-light: #1792d2;
+  --clr-accent-blue-dark: #143774;
+
+  --ff-ubuntu: "Ubuntu", sans-serif;
+  --ff-lora: "Lora", serif;
+  --ff-segoe: "Segoe UI", sans-serif;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-700: 700;
+  --fs-xs: 0.75rem; /* 12px */
+  --fs-sm: 1rem; /* 16px */
+  --fs-base: 1.125rem; /* 18px */
+  --fs-md: 1.313rem; /* 21px */
+  --fs-lg: 1.5rem; /* 24px */
+  --fs-xl: 2.063rem; /* 33px */
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font: inherit;
+  font-size: var(--fs-base);
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+h2,
+h3 {
+  color: var(--clr-accent-blue-dark);
+  font-weight: var(--fw-400);
+}
+
+h2 {
+  font-family: var(--ff-lora);
+  font-size: var(--fs-lg);
+}
+
+p {
+  font-weight: var(--fw-300);
+  color: var(--clr-neutral-gray-700);
+}
+
+a {
+  color: var(--clr-accent-blue-light);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  cursor: pointer;
+  color: var(--clr-accent-blue-dark);
+}
+
+footer {
+  background-color: var(--clr-accent-blue-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+}
+footer p {
+  color: var(--clr-neutral-white);
+  opacity: 0.5;
+  font-family: var(--ff-ubuntu);
+}
+footer p:first-child {
+  font-weight: var(--fw-700);
+}
+footer p:last-child {
+  font-weight: var(--fw-300);
+}
+
+/* utilities */
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.display-none {
+  display: none;
+}
+
+/* layout */
+
+.container {
+  width: 90%;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: var(--clr-neutral-gray-100);
+  margin-bottom: 2em;
+}
+
+.container-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 2em 0;
+}
+
+.header__logo,
+.navigation__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigation__list {
+  width: 100%;
+  gap: 1em;
+}
+
+.navigation__list__item {
+  font-family: var(--ff-ubuntu);
+  font-weight: var(--fw-400);
+  font-size: var(--fs-sm);
+  color: var(--clr-neutral-gray-900);
+}
+
+.header__logo__name {
+  font-family: var(--ff-lora);
+  font-weight: var(--fw-400);
+  font-size: var(--fs-xl);
+  color: var(--clr-accent-blue-dark);
+  margin-bottom: 0.1em;
+}
+.header__logo__detail {
+  font-family: var(--ff-ubuntu);
+  font-weight: var(--fw-700);
+  font-size: var(--fs-xs);
+  color: var(--clr-accent-blue-light);
+  letter-spacing: 2px;
+  margin-bottom: 2em;
+}
+
+.article-image {
+  width: 100%;
+  height: 242px;
+  object-fit: cover;
+}
+
+.aside-about-me__image,
+.aside-article-image {
+  width: 100%;
+  height: 133px;
+  object-fit: cover;
+}
+
+.article-date {
+  font-family: var(--ff-segoe);
+  font-weight: var(--fw-400);
+  color: var(--clr-neutral-gray-700);
+  font-size: 0.875rem;
+}
+
+.article-featured {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  border-bottom: 2px solid var(--clr-neutral-gray-900);
+  padding-bottom: 2em;
+  margin-bottom: 2.5em;
+}
+
+.articles-recent {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+  padding-bottom: 2.5em;
+}
+
+.article-recent,
+.article-recent__details {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.article-recent__details div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.article-detail {
+  font-weight: var(--fw-300);
+  font-family: var(--ff-ubuntu);
+  letter-spacing: 1.5px;
+  line-height: 1.3;
+}
+
+.link-continue-reading {
+  font-family: var(--ff-ubuntu);
+  font-size: 0.875rem;
+  font-weight: var(--fw-700);
+  letter-spacing: 2.4px;
+}
+
+.aside-about-me,
+.aside-recent-articles {
+  border: 1.25em solid var(--clr-neutral-gray-200);
+  padding: 1.25em;
+  margin-bottom: 5em;
+}
+
+.aside-about-me,
+.aside-articles,
+.aside-article,
+.aside-recent-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+}
+
+.aside-article:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.aside-article {
+  border-bottom: 2px solid var(--clr-neutral-gray-200);
+  padding-bottom: 1.25em;
+}
+
+.aside-article-title {
+  font-family: var(--ff-ubuntu);
+  font-weight: var(--fw-700);
+}
+
+@media (min-width: 500px) {
+  .article-recent__details div {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navigation__list {
+    flex-direction: row;
+    gap: 2em;
+  }
+  .container-main {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    justify-content: space-between;
+  }
+
+  .article-recent {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .article-image-container {
+    width: 300px;
+  }
+  .article-image-container .article-date {
+    display: block;
+  }
+  .article-image {
+    object-fit: cover;
+    margin-bottom: 0.5em;
+  }
+
+  .article-recent__details {
+    width: 100%;
+  }
+
+  .article-recent__details div .article-date {
+    display: none;
+  }
+
+  main {
+    width: 70%;
+  }
+  aside {
+    flex: 1;
+  }
+
+  .aside-about-me {
+    margin-bottom: 2em;
+  }
+  .aside-recent-articles {
+    margin-bottom: 0;
+  }
+}
